@@ -1,0 +1,83 @@
+.features-section {
+  @include section-padding;
+  background-color: $color-dark;
+  color: $color-cream;
+
+  .section-heading {
+    h2 {
+      color: $color-cream;
+    }
+
+    p:not(.section-label) {
+      color: rgba($color-cream, 0.72);
+    }
+  }
+
+  .feature-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: $spacing-md;
+    width: min($container-width, 90%);
+    margin: 0 auto;
+  }
+
+  .feature-card {
+    padding: 1.6rem;
+    border: 1px solid rgba($color-cream, 0.08);
+    border-radius: $radius-md;
+    background-color: rgba($color-cream, 0.06);
+
+    h3 {
+      margin-bottom: 0.65rem;
+      color: $color-cream;
+      font-family: $font-main;
+      font-size: 0.95rem;
+    }
+
+    p {
+      color: rgba($color-cream, 0.68);
+      font-size: 0.8rem;
+      line-height: 1.6;
+    }
+  }
+
+  .feature-icon {
+    @include flex-center;
+    width: 42px;
+    height: 42px;
+    margin-bottom: 1rem;
+    border-radius: $radius-sm;
+    background-color: rgba($color-green, 0.85);
+
+    img {
+      width: 20px;
+      height: 20px;
+      object-fit: contain;
+    }
+  }
+
+  @include respond($tablet) {
+    .feature-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @include respond($mobile) {
+    padding: 4rem 1.25rem;
+
+    .feature-grid {
+      grid-template-columns: 1fr;
+      width: 100%;
+      max-width: 420px;
+    }
+
+    .feature-card {
+      padding: 1.4rem;
+      text-align: center;
+    }
+
+    .feature-icon {
+      margin: 0 auto 1rem;
+    }
+  }
+}

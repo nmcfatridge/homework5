@@ -1,0 +1,24 @@
+{
+  "name": "homework5",
+  "version": "1.0.0",
+  "description": "Homework 5",
+  "homepage": "https://github.com/nmcfatridge/homework4#readme",
+  "bugs": {
+    "url": "https://github.com/nmcfatridge/homework4/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nmcfatridge/homework4.git"
+  },
+  "license": "ISC",
+  "author": "",
+  "type": "commonjs",
+  "main": "index.js",
+  "scripts": {
+    "serve": "live-server",
+    "compile-sass": "sass scss/styles.scss css/styles.css -w --no-source-map"
+  },
+  "devDependencies": {
+    "sass": "^1.101.0"
+  }
+}

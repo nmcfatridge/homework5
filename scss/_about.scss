@@ -1,0 +1,135 @@
+.about-section {
+  @include section-padding;
+  background-color: $color-cream;
+
+  .about-inner {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: 4rem;
+    width: min($container-width, 90%);
+    margin: 0 auto;
+  }
+
+  .about-image {
+    position: relative;
+    overflow: hidden;
+    border-radius: $radius-md;
+
+    img {
+      width: 100%;
+      height: 420px;
+      object-fit: cover;
+    }
+  }
+
+  .experience-badge {
+    position: absolute;
+    left: 1.25rem;
+    bottom: 1.25rem;
+    padding: 0.9rem 1.1rem;
+    border-radius: $radius-sm;
+    background-color: $color-green;
+    color: $color-cream;
+
+    strong {
+      display: block;
+      color: $color-tan;
+      font-size: 1.3rem;
+      line-height: 1;
+    }
+
+    span {
+      display: block;
+      margin-top: 0.25rem;
+      font-size: 0.65rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+  }
+
+  .about-content {
+    h2 {
+      margin-bottom: 1.25rem;
+      color: $color-dark;
+      font-size: 2.35rem;
+    }
+
+    p {
+      margin-bottom: 1rem;
+      color: $color-gray;
+      font-size: 0.9rem;
+      line-height: 1.75;
+    }
+  }
+
+  .about-list {
+    display: grid;
+    gap: 0.8rem;
+    margin-top: 1.5rem;
+
+    li {
+      position: relative;
+      padding-left: 1.8rem;
+      color: $color-dark;
+      font-size: 0.82rem;
+      font-weight: 600;
+
+      &::before {
+        content: "✓";
+        position: absolute;
+        top: 0.05rem;
+        left: 0;
+        width: 14px;
+        height: 14px;
+        border-radius: 50%;
+        background-color: rgba($color-green, 0.12);
+        color: $color-green;
+        font-size: 0.65rem;
+        font-weight: 800;
+        line-height: 14px;
+        text-align: center;
+      }
+    }
+  }
+
+  @include respond($tablet) {
+    .about-inner {
+      gap: 2.5rem;
+    }
+
+    .about-image {
+      img {
+        height: 360px;
+      }
+    }
+  }
+
+  @include respond($mobile) {
+    padding: 4rem 1.25rem;
+
+    .about-inner {
+      grid-template-columns: 1fr;
+      width: 100%;
+      max-width: 520px;
+      gap: 2rem;
+    }
+
+    .about-content {
+      h2 {
+        font-size: 1.9rem;
+      }
+
+      p {
+        font-size: 0.88rem;
+      }
+    }
+
+    .about-image {
+      img {
+        height: 340px;
+      }
+    }
+  }
+}

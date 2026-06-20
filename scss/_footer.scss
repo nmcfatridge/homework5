@@ -1,0 +1,193 @@
+.site-footer {
+  width: min($container-width, 100%);
+  margin: 0 auto;
+  padding: 4rem 2rem 1.5rem;
+  background-color: $color-dark;
+  color: $color-cream;
+
+  .footer-grid {
+    display: grid;
+    grid-template-columns: 1.7fr 1fr 1fr 1fr 1.35fr;
+    gap: $spacing-lg;
+    width: min($container-width, 90%);
+    margin: 0 auto 3rem;
+  }
+
+  .footer-logo {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.55rem;
+    margin-bottom: 1rem;
+    color: $color-cream;
+    font-size: 1rem;
+    font-weight: 800;
+
+    .logo-icon {
+      @include flex-center;
+      width: 24px;
+      height: 24px;
+      border-radius: $radius-sm;
+      background-color: $color-green;
+      color: $color-tan;
+      font-size: 0.75rem;
+    }
+  }
+
+  p {
+    max-width: 300px;
+    color: rgba($color-cream, 0.68);
+    font-size: 0.82rem;
+    line-height: 1.7;
+  }
+
+  .footer-contact {
+    display: grid;
+    gap: 0.45rem;
+    margin-top: 1rem;
+
+    li {
+      color: rgba($color-cream, 0.65);
+      font-size: 0.76rem;
+    }
+  }
+
+  h3 {
+    margin-bottom: 1rem;
+    color: $color-tan;
+    font-family: $font-main;
+    font-size: 0.72rem;
+    font-weight: 800;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  ul {
+    display: grid;
+    gap: 0.55rem;
+  }
+
+  a {
+    color: rgba($color-cream, 0.72);
+    font-size: 0.8rem;
+    transition: color $transition;
+
+    &:hover {
+      color: $color-tan;
+    }
+  }
+
+  .footer-form {
+    display: flex;
+    gap: 0.5rem;
+    margin-top: 1rem;
+
+    input {
+      min-width: 0;
+      width: 100%;
+      padding: 0.7rem 0.8rem;
+      border: 1px solid rgba($color-cream, 0.16);
+      border-radius: $radius-sm;
+      background-color: rgba($color-cream, 0.08);
+      color: $color-cream;
+      font-family: $font-main;
+      font-size: 0.75rem;
+
+      &::placeholder {
+        color: rgba($color-cream, 0.45);
+      }
+    }
+
+    button {
+      padding: 0.7rem 0.9rem;
+      border: none;
+      border-radius: $radius-sm;
+      background-color: $color-tan;
+      color: $color-dark;
+      font-family: $font-main;
+      font-size: 0.72rem;
+      font-weight: 800;
+      cursor: pointer;
+      transition: opacity $transition;
+
+      &:hover {
+        opacity: 0.9;
+      }
+    }
+  }
+
+  .footer-bottom {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: $spacing-md;
+    width: min($container-width, 90%);
+    margin: 0 auto;
+    padding-top: 1.5rem;
+    border-top: 1px solid rgba($color-cream, 0.12);
+
+    p {
+      max-width: none;
+      color: rgba($color-cream, 0.55);
+      font-size: 0.72rem;
+    }
+
+    ul {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    a {
+      color: rgba($color-cream, 0.55);
+      font-size: 0.72rem;
+
+      &:hover {
+        color: $color-tan;
+      }
+    }
+  }
+
+  @include respond($tablet) {
+    .footer-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    .footer-bottom {
+      flex-direction: column;
+      text-align: center;
+    }
+  }
+
+  @include respond($mobile) {
+    padding: 3rem 1.25rem 1.5rem;
+
+    .footer-grid {
+      grid-template-columns: 1fr;
+      width: 100%;
+      max-width: 420px;
+      gap: 2rem;
+      text-align: center;
+    }
+
+    .footer-logo {
+      justify-content: center;
+    }
+
+    p {
+      max-width: none;
+    }
+
+    .footer-form {
+      flex-direction: column;
+    }
+
+    .footer-bottom {
+      width: 100%;
+      max-width: 420px;
+
+      ul {
+        justify-content: center;
+      }
+    }
+  }
+}

@@ -1,0 +1,139 @@
+.hero {
+  position: relative;
+  min-height: 680px;
+  padding-top: 52px;
+  background:
+    linear-gradient(rgba(30, 35, 24, 0.55), rgba(30, 35, 24, 0.72)),
+    url("../images/hero.jpg") center bottom / cover no-repeat;
+  color: $color-cream;
+
+  @include flex-center;
+
+  .hero-content {
+    width: min(760px, 90%);
+    text-align: center;
+    transform: translateY(10px);
+  }
+
+  h1 {
+    max-width: 680px;
+    margin: 0 auto 1.2rem;
+    font-size: clamp(2.6rem, 5vw, 4.8rem);
+    letter-spacing: -0.045em;
+  }
+
+  .hero-content > p:not(.section-label) {
+    max-width: 560px;
+    margin: 0 auto 1.75rem;
+    color: rgba($color-cream, 0.86);
+    font-size: 0.92rem;
+    line-height: 1.7;
+  }
+
+  .hero-actions {
+    display: flex;
+    justify-content: center;
+    gap: 0.75rem;
+    margin-bottom: 4rem;
+  }
+
+  .hero-stats {
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    max-width: 650px;
+    margin: 0 auto;
+    padding-top: 1.7rem;
+    gap: 1.5rem;
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 10%;
+      width: 80%;
+      height: 1px;
+      background-color: rgba($color-cream, 0.18);
+    }
+
+    article {
+      text-align: center;
+    }
+
+    strong {
+      display: block;
+      color: $color-tan;
+      font-size: 1.15rem;
+      font-weight: 800;
+      line-height: 1.1;
+    }
+
+    span {
+      display: block;
+      margin-top: 0.3rem;
+      color: rgba($color-cream, 0.68);
+      font-size: 0.58rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+  }
+
+  .scroll-label {
+    position: absolute;
+    left: 50%;
+    bottom: 2.2rem;
+    z-index: 5;
+    transform: translateX(-50%);
+    color: $color-tan;
+    font-size: 0.58rem;
+    font-weight: 800;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    opacity: 0.8;
+  }
+
+  @include respond($mobile) {
+    min-height: 560px;
+    padding: 7rem 1.3rem 3rem;
+    background-position: center bottom;
+
+    .hero-content {
+      transform: none;
+    }
+
+    h1 {
+      max-width: 330px;
+      font-size: 2.3rem;
+    }
+
+    .hero-content > p:not(.section-label) {
+      font-size: 0.82rem;
+    }
+
+    .hero-actions {
+      flex-direction: column;
+      align-items: center;
+      margin-bottom: 2.4rem;
+
+      .btn {
+        width: 175px;
+      }
+    }
+
+    .hero-stats {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.25rem;
+    }
+
+    .scroll-label {
+      display: none;
+    }
+  }
+
+  @include respond($small) {
+    .hero-stats {
+      grid-template-columns: 1fr;
+    }
+  }
+}

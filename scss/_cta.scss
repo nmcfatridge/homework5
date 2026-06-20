@@ -1,0 +1,60 @@
+.cta-section {
+  width: min($container-width, 100%);
+  margin: 0 auto;
+  padding: 5rem 2rem;
+  background:
+    linear-gradient(rgba(30, 35, 24, 0.82), rgba(30, 35, 24, 0.82)),
+    url("../images/forrest-camping.avif") center / cover no-repeat;
+  color: $color-cream;
+  text-align: center;
+
+  .section-label {
+    color: $color-tan;
+  }
+
+  h2 {
+    max-width: 620px;
+    margin: 0 auto 1rem;
+    color: $color-cream;
+    font-size: 2.7rem;
+  }
+
+  > p:not(.section-label) {
+    max-width: 540px;
+    margin: 0 auto 1.8rem;
+    color: rgba($color-cream, 0.78);
+    font-size: 0.95rem;
+    line-height: 1.7;
+  }
+
+  .cta-actions {
+    display: flex;
+    justify-content: center;
+    gap: 0.8rem;
+  }
+
+  .btn-outline {
+    @include button-style(transparent, $color-cream, rgba($color-cream, 0.65));
+  }
+
+  @include respond($mobile) {
+    padding: 4rem 1.25rem;
+
+    h2 {
+      font-size: 2rem;
+    }
+
+    > p:not(.section-label) {
+      font-size: 0.88rem;
+    }
+
+    .cta-actions {
+      flex-direction: column;
+      align-items: center;
+
+      .btn {
+        width: 170px;
+      }
+    }
+  }
+}

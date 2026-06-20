@@ -1,0 +1,161 @@
+.site-header {
+  position: fixed;
+  top: 0;
+  left: 50%;
+  z-index: 50;
+  width: 100%;
+  max-width: $container-width;
+  height: 52px;
+  transform: translateX(-50%);
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  padding: 0 3rem;
+  background-color: $color-dark;
+
+  .logo-link {
+    display: flex;
+    align-items: center;
+    gap: 0.55rem;
+    color: $color-cream;
+    font-weight: 700;
+  }
+
+  .logo-icon {
+    @include flex-center;
+    width: 24px;
+    height: 24px;
+    border-radius: $radius-sm;
+    background-color: $color-green;
+    color: $color-tan;
+    font-size: 0.75rem;
+  }
+
+  .logo-text {
+    color: $color-cream;
+    font-size: 0.85rem;
+  }
+
+  .main-nav {
+    justify-self: end;
+    margin-right: 1.8rem;
+
+    ul {
+      display: flex;
+      align-items: center;
+      gap: 1.6rem;
+    }
+
+    a {
+      color: $color-tan;
+      font-size: 0.65rem;
+      font-weight: 700;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      transition: color $transition;
+
+      &:hover {
+        color: $color-cream;
+      }
+    }
+  }
+
+  .book-link {
+    justify-self: end;
+    @include button-style($color-green, $color-cream);
+    padding: 0.45rem 0.85rem;
+    font-size: 0.65rem;
+  }
+
+  .nav-toggle {
+    display: none;
+    position: relative;
+    z-index: 60;
+    width: 40px;
+    height: 40px;
+    background: none;
+    border: none;
+    cursor: pointer;
+
+    span {
+      display: block;
+      width: 26px;
+      height: 2px;
+      margin: 6px auto;
+      border-radius: $radius-sm;
+      background-color: $color-cream;
+      transition: all $transition;
+    }
+  }
+
+  .mobile-nav {
+    display: none;
+  }
+
+  &.nav-open {
+    .nav-toggle {
+      span:nth-child(1) {
+        transform: translateY(8px) rotate(45deg);
+      }
+
+      span:nth-child(2) {
+        opacity: 0;
+      }
+
+      span:nth-child(3) {
+        transform: translateY(-8px) rotate(-45deg);
+      }
+    }
+
+    .mobile-nav {
+      display: flex;
+    }
+  }
+
+  @include respond($mobile) {
+    height: 58px;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 1.25rem;
+
+    .main-nav,
+    .book-link {
+      display: none;
+    }
+
+    .nav-toggle {
+      display: block;
+    }
+
+    .mobile-nav {
+      position: absolute;
+      top: 58px;
+      left: 0;
+      width: 100%;
+      height: calc(100vh - 58px);
+      align-items: center;
+      justify-content: center;
+      background-color: $color-dark;
+
+      ul {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 1.5rem;
+      }
+
+      a {
+        color: $color-tan;
+        font-size: 0.9rem;
+        font-weight: 700;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        transition: color $transition;
+
+        &:hover {
+          color: $color-cream;
+        }
+      }
+    }
+  }
+}
