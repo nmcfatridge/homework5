@@ -23,5 +23,4 @@ This project is a responsive landing page based on the provided Trail & Timber p
 https://in-info-web4.luddy.indianapolis.iu.edu/~nmcfatri/n215/homework5/
 
 ## GitHub Repository Link
-
-Add GitHub repository link here
+(https://github.com/nmcfatridge/homework5#github-repository-link)
